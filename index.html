@@ -1,15 +1,33 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-   <base href="/character_recog_ai/">
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctl
+    Fore more details:* https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+  -->
+  <base href="/character_recog_ai/">
+  
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-    <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
-  <title>ScriptSense - Loading</title>
-  </script>
-  <!-- This script adds the flutter initialization JS code -->
-  <script src="flutter.js" defer></script>
+  <meta name="description" content="A Selft taught flutter developer, technical writer and open source contributor.">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="folio">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <title>Shammas Khan</title>
+  <link rel="manifest" href="manifest.json">
+
   <style>
     @font-face {
       font-family: 'Manrope';
@@ -173,37 +191,47 @@
       50% { transform: scale(1.05); opacity: 1; }
       100% { transform: scale(1); opacity: 0.8; }
     }
+
+    /* Hide after Flutter loads */
+    .loaded #loading-screen {
+      display: none;
+    }
   </style>
+
 </head>
+
 <body>
-  <!-- Animated Background Circles -->
-  <div class="gradient-ball pink-ball"></div>
-  <div class="gradient-ball blue-ball"></div>
-  <div class="gradient-ball yellow-ball"></div>
-  
-  <!-- Loading Content -->
-  <div class="loading-container">
-    <div class="logo"></div>
-    <div class="loading-text">Initializing ScriptSense...</div>
-    <div class="progress-container">
-      <div class="progress-bar"></div>
-    </div>
+  <div id="load">
+    <div class="gradient-ball pink-ball"></div>
+    <div class="gradient-ball blue-ball"></div>
+    <div class="gradient-ball yellow-ball"></div>
+    
+    <div class="loading-container">
+      <div class="logo"></div>
+      <div class="loading-text">Initializing ScriptSense...</div>
+      <div class="progress-container">
+        <div class="progress-bar"></div>
+      </div>
   </div>
-   <!-- <script src="flutter_bootstrap.js" async></script> -->
-     <script>
-    window.addEventListener('load', function(ev) {
-      // Download main.dart.js
-      _flutter.loader.loadEntrypoint({
-        serviceWorker: {
-          serviceWorkerVersion: serviceWorkerVersion,
-        },
-        onEntrypointLoaded: function(engineInitializer) {
-          engineInitializer.initializeEngine().then(function(appRunner) {
-            appRunner.runApp();
-          });
-        }
+
+  </div>
+  
+  <!-- This script installs service_worker.js to provide PWA functionality to
+       application. For more information, see:
+       https://developers.google.com/web/fundamentals/primers/service-workers -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('flutter-first-frame', function () {
+        navigator.serviceWorker.register('flutter_service_worker.js?v=345944443');
+           // Remove the loading screen manually
+    const loader = document.getElementById('load');
+    if (loader) {
+      loader.remove(); // or: loader.style.display = 'none';
+    }
       });
-    });
+    }
   </script>
+  <script src="main.dart.js" type="application/javascript"></script>
 </body>
+
 </html>

@@ -3,8 +3,7 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 
-const RESOURCES = {"1.png": "5dcef449791fa27946b3d35ad8803796",
-"assets/AssetManifest.bin": "89c6179e4ed82d0b419ac11b214e08e2",
+const RESOURCES = {"assets/AssetManifest.bin": "89c6179e4ed82d0b419ac11b214e08e2",
 "assets/AssetManifest.bin.json": "74eadcc840e081e9593d05fb7006a73c",
 "assets/AssetManifest.json": "5d5ca9ca95ffd69fbf908cc43706705c",
 "assets/assets/fonts/Manrope-Bold.ttf": "69258532ce99ef9abf8220e0276fff04",
@@ -31,15 +30,15 @@ const RESOURCES = {"1.png": "5dcef449791fa27946b3d35ad8803796",
 "canvaskit/skwasm.worker.js": "89990e8c92bcb123999aa81f7e203b1c",
 "favicon.png": "432a3957c561e9cf3f030caa124ffe88",
 "flutter.js": "f393d3c16b631f36852323de8e583132",
-"flutter_bootstrap.js": "caa7863b42631410cf4aefc91188e9e1",
+"flutter_bootstrap.js": "e6bd54aabd02135f7533fb729ecfe4f9",
 "fonts/Manrope-Regular.ttf": "f8105661cf5923464f0db8290746d2f9",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
 "icons/logo3.png": "432a3957c561e9cf3f030caa124ffe88",
-"index.html": "0aa2a546b473dd253e7d34cc4a19c0fa",
-"/": "0aa2a546b473dd253e7d34cc4a19c0fa",
+"index.html": "526cbd962253e40db010d86ffb72eaab",
+"/": "526cbd962253e40db010d86ffb72eaab",
 "main.dart.js": "dbc7c9122eaa6e3a084246195fe8d6b4",
 "manifest.json": "d1eb28f8dce3eeaf73566f1239635d2a",
 "version.json": "6ed1b733ebca6bceb97c42b9e30ee66e"};
