@@ -1,38 +1,209 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
-  <base href="/character_recog_ai/">
-
+   <base href="/character_recog_ai/">
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
-
-  <!-- iOS meta tags & icons -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="ds_ai_project_ui">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
-
-  <!-- Favicon -->
+    <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
+  <title>ScriptSense - Loading</title>
+  </script>
+  <!-- This script adds the flutter initialization JS code -->
+  <script src="flutter.js" defer></script>
+  <style>
+    @font-face {
+      font-family: 'Manrope';
+      src: url('fonts/Manrope-Regular.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
 
-  <title>ds_ai_project_ui</title>
-  <link rel="manifest" href="manifest.json">
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      background-color: #1C1C20;
+      position: relative;
+      font-family: 'Manrope', sans-serif;
+    }
+
+    /* Animated Background Circles */
+    .gradient-ball {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      transform: translate(-50%, -50%);
+    }
+
+    .pink-ball {
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, 
+        rgba(238, 160, 255, 0.6) 0%, 
+        rgba(238, 160, 255, 0.05) 70%);
+      animation: move-pink 15s infinite ease-in-out alternate;
+    }
+
+    .blue-ball {
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, 
+        rgba(226, 244, 166, 0.6) 0%, 
+        rgba(226, 244, 166, 0.05) 70%);
+      animation: move-blue 15s infinite ease-in-out alternate;
+    }
+
+    .yellow-ball {
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, 
+        rgba(90, 78, 255, 0.6) 0%, 
+        rgba(90, 78, 255, 0.05) 70%);
+      animation: move-yellow 15s infinite ease-in-out alternate;
+    }
+
+    @keyframes move-pink {
+      0% {
+        top: 100%;
+        left: 0%;
+      }
+      100% {
+        top: 0%;
+        left: 100%;
+      }
+    }
+
+    @keyframes move-blue {
+      0% {
+        top: 0%;
+        left: 100%;
+      }
+      100% {
+        top: 100%;
+        left: 0%;
+      }
+    }
+
+    @keyframes move-yellow {
+      0% {
+        top: 100%;
+        left: 100%;
+      }
+      100% {
+        top: 0%;
+        left: 0%;
+      }
+    }
+
+    /* Loading Content */
+    .loading-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+
+    .logo {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 24px;
+      background-image: url('icons/logo3.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      animation: pulse 2s infinite ease-in-out;
+    }
+
+    .loading-text {
+      color: #E2F4A6;
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 24px;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    .progress-container {
+      width: 100%;
+      height: 4px;
+      background-color: #26262A;
+      border-radius: 2px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 100%;
+      border-radius: 2px;
+      position: absolute;
+      left: -100%;
+      background: linear-gradient(90deg, 
+        #EEA0FF, 
+        #5A4EFF, 
+        #E2F4A6);
+      background-size: 300% 100%;
+      animation: progress 3.5s infinite ease-in-out, 
+                 progress-colors 10.5s infinite linear;
+    }
+
+    /* Animations */
+    @keyframes progress {
+      0% { left: -100%; }
+      50% { left: 0%; }
+      100% { left: 100%; }
+    }
+    
+    @keyframes progress-colors {
+      0%, 100% { background-position: 0% 0%; }
+      33% { background-position: 100% 0%; }
+      66% { background-position: 200% 0%; }
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 0.8; }
+      50% { transform: scale(1.05); opacity: 1; }
+      100% { transform: scale(1); opacity: 0.8; }
+    }
+  </style>
 </head>
 <body>
-  <script src="flutter_bootstrap.js" async></script>
+  <!-- Animated Background Circles -->
+  <div class="gradient-ball pink-ball"></div>
+  <div class="gradient-ball blue-ball"></div>
+  <div class="gradient-ball yellow-ball"></div>
+  
+  <!-- Loading Content -->
+  <div class="loading-container">
+    <div class="logo"></div>
+    <div class="loading-text">Initializing ScriptSense...</div>
+    <div class="progress-container">
+      <div class="progress-bar"></div>
+    </div>
+  </div>
+   <!-- <script src="flutter_bootstrap.js" async></script> -->
+     <script>
+    window.addEventListener('load', function(ev) {
+      // Download main.dart.js
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        },
+        onEntrypointLoaded: function(engineInitializer) {
+          engineInitializer.initializeEngine().then(function(appRunner) {
+            appRunner.runApp();
+          });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
